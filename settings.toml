@@ -1,0 +1,8 @@
+DB_DIALECT = "postgresql"
+DB_API = "asyncpg"
+DB_HOST = "127.0.0.1"
+DB_PORT = 5432
+DB_USER = "postgres"
+DB_NAME = "sc2sentry"
+
+JWT_LIFETIME = 3600

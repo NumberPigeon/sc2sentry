@@ -1,3 +1,12 @@
+# editor
+.vscode
+
+# alembic.ini
+alembic.ini
+
+# dynaconf
+.secrets.*
+
 # python generated files
 __pycache__/
 *.py[oc]
