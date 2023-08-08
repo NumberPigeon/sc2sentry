@@ -7,6 +7,8 @@ from sc2sentry.auth.schemas import UserCreate, UserRead, UserUpdate
 router_auth = APIRouter(prefix="/auth", tags=["auth"])
 
 
+# TODO: 增加邮件服务器相关功能，user routers需要认证
+
 # routers
 router_auth.include_router(
     fastapi_users.get_auth_router(auth_backend),
@@ -17,16 +19,16 @@ router_auth.include_router(
     fastapi_users.get_register_router(UserRead, UserCreate),
 )
 
-router_auth.include_router(
-    fastapi_users.get_reset_password_router(),
-)
+# router_auth.include_router(
+#     fastapi_users.get_reset_password_router(),
+# )
+
+# router_auth.include_router(
+#     fastapi_users.get_verify_router(UserRead),
+# )
 
 router_auth.include_router(
-    fastapi_users.get_verify_router(UserRead),
-)
-
-router_auth.include_router(
-    fastapi_users.get_users_router(UserRead, UserUpdate, requires_verification=True),
+    fastapi_users.get_users_router(UserRead, UserUpdate, requires_verification=False),
     prefix="/users",
     tags=["users"],
 )
