@@ -9,8 +9,8 @@ from sc2sentry.config import settings
 
 
 class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
-    reset_password_token_secret = settings.SECRET
-    verification_token_secret = settings.SECRET
+    reset_password_token_secret = settings.auth.secret
+    verification_token_secret = settings.auth.secret
 
 
 async def get_user_manager(user_db: SQLAlchemyUserDatabase = Depends(get_user_db)):

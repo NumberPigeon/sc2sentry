@@ -5,7 +5,7 @@ from sqlalchemy.orm import DeclarativeBase
 
 from sc2sentry.config import settings
 
-engine = create_async_engine(settings.DB_URL)
+engine = create_async_engine(settings.database.url, echo=True)
 
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
 

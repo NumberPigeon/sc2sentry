@@ -6,8 +6,8 @@ from fastapi_users.authentication import (
 
 from sc2sentry.config import settings
 
-secret = settings.SECRET
-jwt_lifetime = settings.JWT_LIFETIME
+secret = settings.auth.secret
+jwt_lifetime = settings.auth.jwt_lifetime_seconds
 
 
 bearer_transport = BearerTransport(tokenUrl="auth/jwt/login")

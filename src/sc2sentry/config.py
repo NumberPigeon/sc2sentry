@@ -6,15 +6,5 @@ settings = Dynaconf(
 )
 
 
-DB_DIALECT = settings.DB_DIALECT
-DB_API = settings.DB_API
-DB_HOST = settings.DB_HOST
-DB_PORT = settings.DB_PORT
-DB_USER = settings.DB_USER
-DB_PASSWORD = settings.DB_PASSWORD
-DB_NAME = settings.DB_NAME
-DB_URL = (
-    f"{DB_DIALECT}+{DB_API}://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-)
-
-settings.DB_URL: str = DB_URL
+db_url = f"{settings.database.dialect}+{settings.database.api}://{settings.database.user}:{settings.database.password}@{settings.database.host}:{settings.database.port}/{settings.database.name}"
+settings.database.url = db_url

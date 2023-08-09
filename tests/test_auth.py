@@ -8,11 +8,11 @@ from httpx import AsyncClient
 from sc2sentry.config import settings
 
 engine = psycopg2.connect(
-    database=settings.DB_NAME,
-    user=settings.DB_USER,
-    password=settings.DB_PASSWORD,
-    host=settings.DB_HOST,
-    port=settings.DB_PORT,
+    database=settings.database.name,
+    user=settings.database.user,
+    password=settings.database.password,
+    host=settings.database.host,
+    port=settings.database.port,
 )
 
 
