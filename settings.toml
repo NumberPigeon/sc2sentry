@@ -8,3 +8,9 @@ name = "sc2sentry"
 
 [auth]
 jwt_lifetime_seconds = 3600
+
+[minio]
+endpoint = "localhost:9000"
+access_key = "minioadmin"
+secure = false
+buckets = ["sc2sentry"]

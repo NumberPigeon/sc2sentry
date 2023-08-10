@@ -16,7 +16,7 @@ engine = psycopg2.connect(
 )
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def email():
     email = generate_random_email()
     yield email
