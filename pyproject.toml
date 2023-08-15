@@ -2,9 +2,7 @@
 name = "sc2sentry"
 version = "0.1.0"
 description = "Add your description here"
-authors = [
-    { name = "NumberPigeon", email = "number108@foxmail.com" }
-]
+authors = [{ name = "NumberPigeon", email = "number108@foxmail.com" }]
 dependencies = [
     "fastapi>=0.101.0",
     "uvicorn[standard]>=0.23.2",
@@ -31,7 +29,13 @@ dev-dependencies = [
     "httpx>=0.24.1",
     "trio>=0.22.2",
     "psycopg2-binary>=2.9.7",
+    "pyright>=1.1.322",
 ]
 
 [tool.hatch.metadata]
 allow-direct-references = true
+
+[tool.pyright]
+include = ["src"]
+reporttMissingImports = true
+reportMissingTypeStubs = false
